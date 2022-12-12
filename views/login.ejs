@@ -1,0 +1,40 @@
+
+<!-- include header -->
+<%- include('include/_header') %>
+<!-- /include header -->
+
+  <!-- Main Site -->
+  <main id="site-main">
+    <div class="container">
+            
+            <h2>Please enter the following details to login</h2>
+        
+        
+        <form id="form" action="/dashboard" method="POST">
+            
+            <label for="Phone" >Phone:</label>
+            <input type="text" id="phone" name="phone"><br><br>
+            
+            <label for="password">Enter Password:</label>
+            <input type="password" id="password" name="password"><br>
+            <br>
+            <button type="submit" value="Submit" id="btnsubmit">Submit</button>
+            
+        </form>
+        <h2 class="query">New member? Register <a href="/">here</a></h2>
+    </div>
+    
+    <% if (msg) { %>
+        <h2 class="invalid">Your credentials do not match. Please try again!</h2>
+    <% } %>
+    
+    <%  if (check) { %>
+        <h2 class="invalid">You are not a member, Please Register</h2>
+    <% } %>
+</main>
+<script src="login.js"></script>
+<!-- /Main Site -->
+
+<!-- include footer -->
+<%- include('include/_footer') %>
+<!-- /include footer -->

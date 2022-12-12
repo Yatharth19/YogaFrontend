@@ -1,0 +1,72 @@
+
+<!-- include header -->
+<%- include('include/_header') %>
+<!-- /include header -->
+
+  <!-- Main Site -->
+  <main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between">
+            <h2>Welcome to Yoga classes</h2>
+            
+        <% if (response) { %>
+            <h3>Your current details are as follows:</h3>
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td><%= Name %></td>
+                </tr>
+                <tr>
+                    <td>Age:</td>
+                    <td><%= Age %></td>
+                </tr>
+                <tr>
+                    <td>Phone:</td>
+                    <td><%= Phone %></td>
+                </tr>
+                <tr>
+                    <td>Gender:</td>
+                    <td><%= Gender %></td>
+                </tr>
+                <tr>
+                    <td>Current Slot:</td>
+                    <td><%= Slot %></td>
+                </tr>
+                <tr>
+                    <td>Fees:</td>
+                    <td><%= Fees %></td>
+                </tr>
+                <tr>
+                    <td>Next Month's time slot: </td>
+                    <td><%= nextslot %></td>
+                </tr>
+            </table>
+        <% } %>
+            <br>
+            <form id="form" action="/save" method="post">
+                <label for="changeslot">Choose Time Slot (Applicable from next month)</label>
+                <select name="slot" id="slot">
+                    <option value="Slot-1">Slot 1: 6am-7am</option>
+                    <option value="Slot-2">Slot 2: 7am-8am</option>
+                    <option value="Slot-3">Slot 3: 8am-9am</option>
+                    <option value="Slot-4">Slot 4: 5pm-6pm</option>
+                </select>
+                <br>
+                <label for="fees">Pay Fees(Rs. 500):</label>
+                <button disabled>Pay Fees</button>
+                <input type="hidden" name="phone" value=<%= Phone %>>
+                <br><br>
+                <button type="submit" value="Submit" id="btnsubmit">Save Changes</button>
+                
+            </form>
+        </div>
+
+        
+       
+    </div>
+</main>
+<!-- /Main Site -->
+
+<!-- include footer -->
+<%- include('include/_footer') %>
+<!-- /include footer -->
